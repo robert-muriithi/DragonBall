@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="all">All</string>
+    <string name="base_ki">Base KI:</string>
+    <string name="total_ki">Total KI:</string>
+    <string name="affiliation">Affiliation:</string>
+    <string name="no_characters">No %1$s characters</string>
+    <string name="no_character_description">There are no characters with this affiliation.\nTry selecting a different one.</string>
+    <string name="no_results_for">No results for \"%1$s\"</string>
+    <string name="no_results_description">Check the spelling or try a\ndifferent filter combination.</string>
+    <string name="no_characters_found">No Characters Found</string>
+    <string name="try_again_later">Try again later.</string>
+    <string name="search_dragon_ball_characters">Search Dragon Ball characters</string>
+    <string name="search">Search</string>
+    <string name="clear_search">Clear search</string>
+    <string name="dragon_ball">Dragon Ball</string>
+    <string name="switch_to_light_mode">Switch to light mode</string>
+    <string name="switch_to_dark_mode">Switch to dark mode</string>
+</resources>

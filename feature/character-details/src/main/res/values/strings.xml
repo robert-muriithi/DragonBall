@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="destroyed">Destroyed</string>
+    <string name="biography">Biography</string>
+    <string name="ki">KI: %1$s</string>
+    <string name="intact">Intact</string>
+    <string name="character_details">Character Details</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="retry">Retry</string>
+    <string name="no_character_details_available">No character details available</string>
+    <string name="race">Race</string>
+    <string name="status">Status</string>
+    <string name="base_ki">Base KI</string>
+    <string name="max_ki">Max KI</string>
+    <string name="affiliation">Affiliation</string>
+    <string name="origin_planet">Origin Planet</string>
+    <string name="unknown">Unknown</string>
+    <string name="transformations">Transformations</string>
+    <string name="no_transformations_available">No transformations available</string>
+    <string name="back">Back</string>
+</resources>
