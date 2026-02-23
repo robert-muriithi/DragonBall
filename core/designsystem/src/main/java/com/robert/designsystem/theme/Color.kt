@@ -41,15 +41,3 @@ val StatusAlive = Color(0xFF4CAF50)
 val StatusDeceased = Color(0xFFFF6B6B)
 val StatusUnknown = Color(0xFF9E9E9E)
 
-// Ki Colors (for power level display)
-val KiLow = Color(0xFF4FC3F7)
-val KiMedium = Color(0xFFFFD54F)
-val KiHigh = Color(0xFFFF6B35)
-val KiExtreme = Color(0xFFFF1744)
-
-// Affiliation Colors
-val AffiliationZFighter = Color(0xFF4FC3F7)
-val AffiliationVillain = Color(0xFFFF6B6B)
-val AffiliationNeutral = Color(0xFF9E9E9E)
-val AffiliationFrieza = Color(0xFF9C27B0)
-

@@ -6,7 +6,7 @@ import com.robert.domain.model.CharacterSummary
 import kotlinx.coroutines.flow.Flow
 
 interface CharacterRepository {
-    fun getCharactersPaged(
+    fun fetchPagedCharacters(
         affiliation: String?,
         searchQuery: String?
     ): Flow<PagingData<CharacterSummary>>

@@ -12,7 +12,7 @@ class GetCharactersUseCase @Inject constructor(
     private val repository: CharacterRepository
 ) {
     operator fun invoke(params: Params): Flow<PagingData<CharacterSummary>> {
-        return repository.getCharactersPaged(
+        return repository.fetchPagedCharacters(
             affiliation = params.affiliation?.takeIf { it.isNotBlank() },
             searchQuery = params.searchQuery?.takeIf { it.isNotBlank() }
         )

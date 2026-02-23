@@ -24,10 +24,4 @@ fun String.capitalizeFirst(): String {
     return if (isEmpty()) this else this[0].uppercase() + substring(1)
 }
 
-/**
- * Truncates the string to the specified max length with ellipsis.
- */
-fun String.truncate(maxLength: Int, ellipsis: String = "..."): String {
-    return if (length <= maxLength) this else take(maxLength - ellipsis.length) + ellipsis
-}
 

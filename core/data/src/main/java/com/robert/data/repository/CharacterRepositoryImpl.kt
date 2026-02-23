@@ -11,7 +11,6 @@ import retrofit2.HttpException as RetrofitHttpException
 import com.robert.data.mapper.toDetailsEntity
 import com.robert.data.mapper.toDomainDetails
 import com.robert.data.mapper.toDomainSummary
-import com.robert.data.mapper.toEntity
 import com.robert.data.mapper.toPlanetEntity
 import com.robert.data.mapper.toTransformationEntities
 import com.robert.data.paging.CharactersRemoteMediator
@@ -33,7 +32,7 @@ class CharacterRepositoryImpl @Inject constructor(
     private val database: DragonBallDatabase
 ) : CharacterRepository {
 
-    override fun getCharactersPaged(
+    override fun fetchPagedCharacters(
         affiliation: String?,
         searchQuery: String?
     ): Flow<PagingData<CharacterSummary>> {
