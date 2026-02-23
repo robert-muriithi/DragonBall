@@ -96,8 +96,8 @@ Data flow is one-way: **UI → ViewModel → Use case → Repository → (Networ
 ## Design patterns
 
 - **MVVM** – ViewModels hold UI state and business flow; Composables observe state and send events.
-- **Repository** – Single API for character list and details; hides paging, cache, and network.
-- **Use cases** – Thin wrappers (e.g. `GetCharactersUseCase`, `GetCharacterDetailsUseCase`) around the repository to keep ViewModels focused.
+- **Repository Pattern** – Single API for character list and details; hides paging, cache, and network.
+- **Use cases Interactor pattern** – Thin wrappers (e.g. `GetCharactersUseCase`, `GetCharacterDetailsUseCase`) around the repository to keep ViewModels focused.
 - **Dependency injection** – Hilt for all dependencies; interfaces in domain, implementations in data.
 - **Cache-first (for details)** – Character details are read from Room first; network is used only when details are missing or on failure fallback.
 - **RemoteMediator** – Paging 3 RemoteMediator for “network + local” paging: loads pages from API, writes to Room; UI reads from a Room-backed `PagingSource`.
