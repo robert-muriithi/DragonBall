@@ -1,4 +1,4 @@
-# Dragon Ball
+# Dragon Ball Z
 
 An Android app that fetches and displays Dragon Ball characters using the [Dragon Ball API](https://web.dragonball-api.com/documentation). Built with Kotlin, Jetpack Compose, and a modular architecture.
 
