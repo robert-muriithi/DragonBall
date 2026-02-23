@@ -5,11 +5,6 @@ An Android app that fetches and displays Dragon Ball characters using the [Drago
 ---
 
 ## Demo
-
-### Screen recording
-
-<video src="demo/Screen_recording_20260223_135755.webm" controls width="320"></video>
-
 ### Screenshots
 
 | Characters list | Character details |
