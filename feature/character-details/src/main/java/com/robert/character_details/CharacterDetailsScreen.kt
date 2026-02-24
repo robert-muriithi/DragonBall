@@ -46,8 +46,8 @@ import com.robert.character_details.components.StatItem
 import com.robert.character_details.components.TransformationCard
 import com.robert.character_details.model.CharacterDetailsModel
 import com.robert.character_details.model.PlanetModel
-import com.robert.common.extensions.orDash
-import com.robert.common.extensions.orUnknown
+import com.robert.common.display.DefaultDisplayMessageMapper
+import com.robert.common.R as R_common
 import com.robert.designsystem.theme.DragonBallTheme
 import com.robert.designsystem.theme.Elevation
 import com.robert.designsystem.theme.Spacing
@@ -76,7 +76,7 @@ fun SharedTransitionScope.CharacterDetailsScreen(
         when {
             uiState.isLoading -> LoadingContent(modifier = Modifier.padding(innerPadding))
             uiState.isError -> ErrorContent(
-                message = uiState.errorMessage ?: stringResource(R.string.unknown_error),
+                message = uiState.errorMessage?.let { stringResource(it.resourceId) } ?: stringResource(R_common.string.error_unknown),
                 onRetry = { viewModel.retry() },
                 modifier = Modifier.padding(innerPadding)
             )
@@ -253,8 +253,8 @@ private fun SharedTransitionScope.CharacterInfoSection(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(Spacing.default)
         ) {
-            InfoChip(label = stringResource(R.string.race), value = details.race.orUnknown())
-            InfoChip(label = stringResource(R.string.status), value = details.status.orUnknown())
+            InfoChip(label = stringResource(R.string.race), value = DefaultDisplayMessageMapper.unknown(details.race))
+            InfoChip(label = stringResource(R.string.status), value = DefaultDisplayMessageMapper.unknown(details.status))
         }
 
         Card(
@@ -269,14 +269,14 @@ private fun SharedTransitionScope.CharacterInfoSection(
                     .padding(Spacing.default),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                StatItem(label = stringResource(R.string.base_ki), value = details.ki.orDash())
-                StatItem(label = stringResource(R.string.max_ki), value = details.maxKi.orDash())
+                StatItem(label = stringResource(R.string.base_ki), value = DefaultDisplayMessageMapper.dash(details.ki))
+                StatItem(label = stringResource(R.string.max_ki), value = DefaultDisplayMessageMapper.dash(details.maxKi))
             }
         }
 
         SectionHeader(title = stringResource(R.string.affiliation))
         Text(
-            text = details.affiliation.orUnknown(),
+            text = DefaultDisplayMessageMapper.unknown(details.affiliation),
             style = MaterialTheme.typography.bodyLarge,
             color = colors.affiliationColor
         )

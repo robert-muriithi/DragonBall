@@ -3,7 +3,7 @@ package com.robert.character_details
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.robert.character_details.mapper.toCharacterDetailsUi
-import com.robert.common.error.ErrorHandler
+import com.robert.common.error.NetworkMessageMapper
 import com.robert.domain.usecase.GetCharacterDetailsUseCase
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
@@ -46,7 +46,7 @@ class CharacterDetailsViewModel @AssistedInject constructor(
                     _uiState.update {
                         it.copy(
                             isLoading = false,
-                            errorMessage = ErrorHandler.getErrorMessage(throwable)
+                            errorMessage = NetworkMessageMapper.getErrorMessage(throwable)
                         )
                     }
                 }

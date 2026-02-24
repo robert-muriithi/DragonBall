@@ -31,11 +31,11 @@ fun AffiliationFilterChips(
             onClick = { onAffiliationSelected(null) }
         )
 
-        Affiliations.ALL.forEach { affiliation ->
+        Affiliations.all.forEach { affiliation ->
             FilterChip(
-                text = affiliation,
-                isSelected = selectedAffiliation == affiliation,
-                onClick = { onAffiliationSelected(affiliation) }
+                text = affiliation.value,
+                isSelected = selectedAffiliation == affiliation.value,
+                onClick = { onAffiliationSelected(affiliation.value) }
             )
         }
     }
