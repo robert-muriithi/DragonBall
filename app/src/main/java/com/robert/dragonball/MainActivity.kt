@@ -11,8 +11,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.robert.common.dispatcher.CoroutineScopedDispatcherProvider
 import com.robert.common.dispatcher.DispatcherProvider
-import com.robert.common.dispatcher.LocalDispatcherProvider
 import com.robert.datastore.ThemePreference
 import com.robert.designsystem.theme.DragonBallTheme
 import com.robert.dragonball.navigation.DragonBallNavHost
@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
                 ThemePreference.SYSTEM -> systemDark
             }
 
-            CompositionLocalProvider(LocalDispatcherProvider provides dispatchers) {
+            CompositionLocalProvider(CoroutineScopedDispatcherProvider provides dispatchers) {
                 DragonBallTheme(darkTheme = isDark) {
                     DragonBallNavHost(
                         modifier = Modifier.fillMaxSize(),

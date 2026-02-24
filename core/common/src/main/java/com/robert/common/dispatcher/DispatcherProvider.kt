@@ -21,6 +21,10 @@ class DefaultDispatcherProvider : DispatcherProvider {
     override val unconfined: CoroutineDispatcher = Dispatchers.Unconfined
 }
 
-val LocalDispatcherProvider: ProvidableCompositionLocal<DispatcherProvider> =
-    staticCompositionLocalOf { DefaultDispatcherProvider() }
+object CoroutineScopedDispatcherProvider {
+    val LocalDispatcherProvider: ProvidableCompositionLocal<DispatcherProvider> =
+        staticCompositionLocalOf { DefaultDispatcherProvider() }
+
+    infix fun provides(value: DispatcherProvider) = LocalDispatcherProvider provides value
+}
 

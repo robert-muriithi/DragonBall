@@ -13,7 +13,7 @@ import androidx.palette.graphics.Palette
 import coil.ImageLoader
 import coil.request.ImageRequest
 import coil.request.SuccessResult
-import com.robert.common.dispatcher.LocalDispatcherProvider
+import com.robert.common.dispatcher.CoroutineScopedDispatcherProvider
 import kotlinx.coroutines.withContext
 import timber.log.Timber
 
@@ -25,7 +25,7 @@ fun rememberDominantColor(
 ): Color {
     var dominantColor by remember(imageUrl) { mutableStateOf(defaultColor) }
     val context = LocalContext.current
-    val dispatchers = LocalDispatcherProvider.current
+    val dispatchers = CoroutineScopedDispatcherProvider.LocalDispatcherProvider.current
 
     LaunchedEffect(imageUrl) {
         if (imageUrl.isNullOrBlank()) {
