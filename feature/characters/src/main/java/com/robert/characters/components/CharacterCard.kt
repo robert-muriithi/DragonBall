@@ -31,8 +31,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.robert.characters.R
 import com.robert.characters.model.CharacterSummaryModel
-import com.robert.common.extensions.orDash
-import com.robert.common.extensions.orUnknown
+import com.robert.common.display.DefaultDisplayMessageMapper
 import com.robert.designsystem.theme.AspectRatio
 import com.robert.designsystem.theme.DragonBallTheme
 import com.robert.designsystem.theme.Elevation
@@ -123,7 +122,7 @@ private fun CharacterCardContent(
         )
 
         Text(
-            text = "${item.race.orUnknown()} • ${item.gender.orUnknown()}",
+            text = "${DefaultDisplayMessageMapper.unknown(item.race)} • ${DefaultDisplayMessageMapper.unknown(item.gender)}",
             style = MaterialTheme.typography.labelSmall,
             color = colors.accentOrange,
             fontWeight = FontWeight.Medium,
@@ -141,7 +140,7 @@ private fun CharacterCardContent(
                 color = colors.textSecondary,
             )
             Text(
-                text = item.ki.orDash(),
+                text = DefaultDisplayMessageMapper.dash(item.ki),
                 style = MaterialTheme.typography.labelSmall,
                 color = colors.kiColor,
                 fontWeight = FontWeight.SemiBold,
@@ -160,7 +159,7 @@ private fun CharacterCardContent(
                 color = colors.textSecondary
             )
             Text(
-                text = item.maxKi.orDash(),
+                text = DefaultDisplayMessageMapper.dash(item.maxKi),
                 style = MaterialTheme.typography.labelSmall,
                 color = colors.kiColor,
                 fontWeight = FontWeight.SemiBold,
@@ -179,7 +178,7 @@ private fun CharacterCardContent(
                 color = colors.textSecondary
             )
             Text(
-                text = item.affiliation.orUnknown(),
+                text = DefaultDisplayMessageMapper.unknown(item.affiliation),
                 style = MaterialTheme.typography.labelSmall,
                 color = colors.affiliationColor,
                 fontWeight = FontWeight.SemiBold,

@@ -20,7 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.robert.character_details.R
-import com.robert.common.extensions.orDash
+import com.robert.common.display.DefaultDisplayMessageMapper
 import com.robert.designsystem.theme.DragonBallTheme
 import com.robert.designsystem.theme.Elevation
 import com.robert.designsystem.theme.Spacing
@@ -64,7 +64,7 @@ fun TransformationCard(
                     color = colors.textPrimary
                 )
                 Text(
-                    text = stringResource(R.string.ki, transformation.ki.orDash()),
+                    text = stringResource(R.string.ki, DefaultDisplayMessageMapper.dash(transformation.ki)),
                     style = MaterialTheme.typography.bodySmall,
                     color = colors.kiColor
                 )
