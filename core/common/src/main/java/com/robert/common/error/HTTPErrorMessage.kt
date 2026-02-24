@@ -14,7 +14,4 @@ sealed class HTTPErrorMessage(@field:StringRes open val resourceId: Int) {
     object TimeoutError : HTTPErrorMessage(resourceId = R.string.error_timed_out)
     object NoInternet : HTTPErrorMessage(resourceId = R.string.error_no_internet)
     object UnknownError : HTTPErrorMessage(resourceId = R.string.error_unknown)
-    object Unauthorized : HTTPErrorMessage(resourceId = R.string.error_unauthorized)
-    object BadRequest : HTTPErrorMessage(resourceId = R.string.error_bad_request)
-    object Forbidden : HTTPErrorMessage(resourceId = R.string.error_forbidden)
 }

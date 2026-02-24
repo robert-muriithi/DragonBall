@@ -1,5 +1,6 @@
 package com.robert.common.error
 
+import com.robert.common.R
 import java.io.IOException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
@@ -15,9 +16,9 @@ object NetworkMessageMapper {
     }
 
     private fun mapHttpException(exception: HttpException): HTTPErrorMessage = when (exception.code) {
-        400 -> HTTPErrorMessage.BadRequest
-        401 -> HTTPErrorMessage.Unauthorized
-        403 -> HTTPErrorMessage.Forbidden
+        400 -> HTTPErrorMessage.Specified(resourceId = R.string.error_bad_request)
+        401 -> HTTPErrorMessage.Specified(resourceId = R.string.error_unauthorized)
+        403 -> HTTPErrorMessage.Specified(resourceId = R.string.error_forbidden)
         404 -> HTTPErrorMessage.NotFound
         408 -> HTTPErrorMessage.TimeoutError
         in 500..599 -> HTTPErrorMessage.ServerError
