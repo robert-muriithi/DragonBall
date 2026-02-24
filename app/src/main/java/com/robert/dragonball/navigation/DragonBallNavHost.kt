@@ -12,7 +12,7 @@ import com.robert.character_details.CharacterDetailsScreen
 import com.robert.character_details.CharacterDetailsViewModel
 import com.robert.characters.CharactersScreen
 import com.robert.characters.CharactersViewModel
-import com.robert.navigation.Destinations
+import com.robert.navigation.Destination
 
 @Composable
 fun DragonBallNavHost(
@@ -25,10 +25,10 @@ fun DragonBallNavHost(
     SharedTransitionLayout {
         NavHost(
             navController = navController,
-            startDestination = Destinations.Characters,
+            startDestination = Destination.CharacterList,
             modifier = modifier
         ) {
-            composable<Destinations.Characters> {
+            composable<Destination.CharacterList> {
                 val viewModel = hiltViewModel<CharactersViewModel>()
 
                 CharactersScreen(
@@ -37,13 +37,13 @@ fun DragonBallNavHost(
                     isDarkTheme = isDarkTheme,
                     onThemeToggle = onThemeToggle,
                     onCharacterClick = { characterId ->
-                        navController.navigate(Destinations.CharacterDetails(characterId))
+                        navController.navigate(Destination.CharacterDetails(characterId))
                     }
                 )
             }
 
-            composable<Destinations.CharacterDetails> { backStackEntry ->
-                val args = backStackEntry.toRoute<Destinations.CharacterDetails>()
+            composable<Destination.CharacterDetails> { backStackEntry ->
+                val args = backStackEntry.toRoute<Destination.CharacterDetails>()
                 val viewModel : CharacterDetailsViewModel = hiltViewModel(
                     creationCallback = { factory : CharacterDetailsViewModel.Factory ->
                         factory.create(characterId = args.characterId)
