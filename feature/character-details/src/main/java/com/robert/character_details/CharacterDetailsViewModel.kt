@@ -29,7 +29,7 @@ class CharacterDetailsViewModel @AssistedInject constructor(
         fetchCharacterDetails(characterId = characterId)
     }
 
-    fun fetchCharacterDetails(characterId: Int) {
+    private fun fetchCharacterDetails(characterId: Int) {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
             getCharacterDetailsUseCase(characterId)
