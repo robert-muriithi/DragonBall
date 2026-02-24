@@ -7,9 +7,8 @@ import javax.inject.Inject
 
 class GetCharacterDetailsUseCase @Inject constructor(
     private val repository: CharacterRepository
-) : UseCase<Int, Result<CharacterDetails>> {
-
-    override suspend operator fun invoke(params: Int): Result<CharacterDetails> {
+)  {
+    suspend operator fun invoke(params: Int): Result<CharacterDetails> {
         return runCatching {
             repository.getCharacterDetails(params)
         }
